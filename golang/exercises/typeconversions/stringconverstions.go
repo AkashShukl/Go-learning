@@ -30,7 +30,7 @@ func stringToFloat(str string) float64 {
 	s = roundFloat(s, 4)
 	return s
 }
-
+//comment
 func FloatToString(value float64) string {
 	// convert to float with 2 digits of precision
 	value = roundFloat(value, 2)
