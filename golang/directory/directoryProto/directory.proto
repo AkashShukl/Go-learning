@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package directoryProto;
+
+option go_package = "/directoryProto";
+
+service EmployeeDirectory {
+    rpc CreateNewEmployee (Employee) returns (Employee) {}
+    rpc UpdateEmployee (Employee) returns (Employee) {}
+    rpc DeleteEmployee (ID) returns (ID) {}
+    rpc GetEmployeeById(ID) returns (Employee) {}
+}
+
+message Employee {
+    string name = 1;
+    int32 age = 2;
+    int32 salary= 3;
+	int32 yoe= 4;
+	int32 EmployeeID =5;
+    repeated Address Address = 6;  
+}
+
+message Address {
+     string area=  1;
+	 string city= 2    ;
+	 int32 zip= 3;
+	 int32 employeeID= 4;
+}
+
+message ID {
+    int32 id = 1;
+}
