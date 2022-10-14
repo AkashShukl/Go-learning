@@ -56,8 +56,8 @@ export default (() => {
     return letters.reduce((accum, curr) => accum += getPointsFor(curr), 0);
   }
 
-  function getPointsFor(letter:string) {
-    const lettersAndPoints = [
+  function getPointsFor(letter:string):number {
+    const lettersAndPoints: [string,number][] = [
       ['AEOIULNRST', 1],
       ['DG', 2],
       ['BCMP', 3],
@@ -68,9 +68,9 @@ export default (() => {
     ];
 
     return lettersAndPoints.reduce((computedScore, pointsTuple) => {
-      const [letters, score] = pointsTuple;
+      const [letters, score]  = pointsTuple;
       console.log(pointsTuple)
-      if (String(letters).split('').find((ll) => ll === letter)) {
+      if (letters.split('').find((ll) => ll === letter)) {
         return computedScore += Number(score);
       }
       return computedScore;

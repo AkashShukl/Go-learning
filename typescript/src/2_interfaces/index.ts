@@ -57,9 +57,12 @@ export default (() => {
     longitude: number,
   }
   
-  interface City {
-    name: string;
-    coords: Coords
+  interface City  {
+    name: string,
+  }
+
+  interface CityWithCoords extends City{
+    coords:Coords
   }
   // [/do not edit]
 
@@ -79,8 +82,8 @@ export default (() => {
     name: 'Tampa',
   };
 
-  function getCityInfo(city: City) {
-    const coords = `(${city.coords.latitude.toFixed(3) }, ${city.coords.longitude.toFixed(3) })`;
+  function getCityInfo(city: CityWithCoords) {
+    const coords  = `(${city.coords.latitude.toFixed(3) }, ${city.coords.longitude.toFixed(3) })`;
     return `${city.name.toUpperCase()} is located at ${coords}.`;
   }
 
